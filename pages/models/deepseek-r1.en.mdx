@@ -1,7 +1,5 @@
 # DeepSeek-R1
 
-import {Screenshot} from 'components/screenshot'
-
 DeepSeek-R1 is an open-source reasoning model developed by DeepSeek AI that achieves performance comparable to OpenAI o1 across math, code, and reasoning tasks. It was released in January 2025 and quickly became one of the most discussed AI models due to its strong benchmark results and open weights.
 
 ## Key Capabilities
@@ -44,10 +42,12 @@ ollama run deepseek-r1:7b
 
 Or via the official API:
 ```python
+import os
 from openai import OpenAI
 
+# Set the DEEPSEEK_API_KEY environment variable with your API key.
 client = OpenAI(
-    api_key="your_api_key",
+    api_key=os.environ.get("DEEPSEEK_API_KEY"),
     base_url="https://api.deepseek.com"
 )
 
@@ -66,7 +66,3 @@ print(response.choices[0].message.content)
 - [DeepSeek-R1 Paper](https://arxiv.org/abs/2501.12948)
 - [DeepSeek GitHub](https://github.com/deepseek-ai/DeepSeek-R1)
 - [DeepSeek API Docs](https://platform.deepseek.com/docs)
-```
-
----
-
